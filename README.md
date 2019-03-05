@@ -1,2 +1,4 @@
-# Reiknirit_v5
-Reiknirit Verkefni 5
+# Reiknirit Verkefni 5
+
+* ### [Dæmi 1](#)
+* ### [Dæmi 2](#)
