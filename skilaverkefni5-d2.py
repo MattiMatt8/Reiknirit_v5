@@ -50,11 +50,11 @@ class Vigur:
         return grada
 
     # Fall sem tekur vigur sem parameter og skilar horni milli vigra
-    # # acos((vigur a(x*y) + vigur b(x*y)) / (lengd vigur a * lengd vigur b))
+    # # acos((vigur a(x)*vigar b(x) + vigur a(y) * vigur b(y)) / (lengd vigur a * lengd vigur b))
     # # Lengd vigurs = sqrt(x**2 + y**2)
     def horn(self, v):
-        ofan = (self.x * self.y) + (v.x * v.y)
-        nedan = (sqrt(self.x**2 + self.y**2) * sqrt(v.x**2 + v.y**2))
+        ofan = (self.x * v.x) + (self.y * v.y)
+        nedan = self.lengd() * v.lengd()
         nidurstada = degrees(acos(ofan/nedan))
         return round(nidurstada,2)
 
@@ -64,7 +64,7 @@ class Vigur:
         return Vigur(self.x + v.x, self.y + v.y)
 
 # Keyrsluforrit
-v1 = Vigur(1, 3)
+v1 = Vigur(4, 4)
 v1.prenta()
 print("Lengd: ", v1.lengd())
 print("Halli: ", v1.halli())
@@ -72,7 +72,8 @@ vþ = v1.þvervigur()
 print("Þvervigur: ", end=" ")
 vþ.prenta()
 print("Stefnuhorn: ", v1.stefnuhorn())
-v2 = Vigur(-3, 1)
+v2 = Vigur(1, -1)
+print("v2 lengd:",v2.lengd())
 print("Horn milli vigra: ", v2.horn(v1))
 v3 = v1.summa(v2)
 print("Summa: ", end=" ")
